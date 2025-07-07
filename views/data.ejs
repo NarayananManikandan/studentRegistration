@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Registration Table</title>
+  <link rel="stylesheet" href="datastyle.css">
+</head>
+
+<body>
+  <div class="background-image"></div>
+  <div class="table-container">
+    <h2>Student Registration List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Phone Number</th>
+          <th>Course</th>
+          <th>Department</th>
+          <th>Year of Study</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% another.map((datas)=> { %>
+          <tr>
+            <td>
+              <%= datas.myname %>
+            </td>
+            <td>
+              <%= datas.myemail %>
+            </td>
+            <td>
+              <%= new Date(datas.mydateofbirth).toLocaleDateString('en-GB') %>
+            </td>
+            <td>
+              <%= datas.myphonenumber %>
+            </td>
+            <td>
+              <%= datas.myCourse %>
+            </td>
+            <td>
+              <%= datas.myDepartment%>
+            </td>
+            <td>
+              <%= datas.myyearofstudy %>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <div class="button-container">
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+  </div>
+</body>
+
+</html>

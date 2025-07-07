@@ -1,0 +1,157 @@
+/* Background with blur */
+.background-image {
+  background: url("images/img2.png") no-repeat center center/cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000;
+  background-color: #f9f9f9;
+}
+
+/* Table container */
+.table-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  color: #0a7d91;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Table (Desktop view) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background: #0a7d91;
+  color: white;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Back button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #04bfbf;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background-color: #038e8e;
+}
+
+/* ============== Responsive Styles ============== */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 20px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: #ffffffd6;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  td {
+    text-align: left;
+    position: relative;
+    padding-left: 50%;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .table-container {
+    padding: 15px;
+    margin: 20px 10px;
+  }
+
+  td {
+    padding-left: 45%;
+    font-size: 14px;
+  }
+
+  .back-button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
